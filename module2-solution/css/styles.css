@@ -1,0 +1,118 @@
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.lg-title {
+    text-align: center;
+}
+
+.row {
+    width: 100%
+}
+
+.card {
+    border: 1px solid black;
+    position: relative;
+    margin: 10px;
+    background-color: lightgray;
+}
+
+.card-title {
+    float: right;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-top: 0px;
+    padding: 5px;
+    width: 130px;
+    text-align: center;
+}
+
+.chicken-color {
+    background-color: rgb(213, 152, 152);
+}
+
+.beef-color {
+    background-color: rgb(197, 69, 67);
+}
+
+.sushi-color {
+    background-color: rgb(229, 209, 152);
+}
+
+.content {
+    color: black;
+    width: 90%;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: hidden;
+}
+
+.content:hover {
+    overflow-y: scroll;
+    cursor: s-resize;
+}
+
+/* Desktop View */
+@media (min-width: 992px) {
+    .col-lg-4 {
+        width: 33.33%;
+        float: left;
+    }
+
+    .sm-title {
+        display: none;
+    }
+
+    .sm-card-title {
+        display: none;
+    }
+}
+
+/* Tablet View */
+@media (min-width: 768px) and (max-width: 991.9px) {
+    .col-md-6 {
+        width: 50%;
+        float: left;
+    }
+
+    .col-md-12 {
+        width: 100%;
+        float: left;
+    }
+
+    .sm-title {
+        display: none;
+    }
+
+    .sm-card-title {
+        display: none;
+    }
+
+}
+
+/* Mobile View */
+@media (max-width: 767.9px) {
+    .col-sm-12 {
+        width: 100%;
+        float: left;
+    }
+    .card-title {
+        width: 100%;
+        max-width: fit-content;
+        border-left: none;
+    }
+
+    .lg-title {
+        display: none;
+    }
+
+    .sm-title {
+        display: block;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 20px;
+    }
+}
