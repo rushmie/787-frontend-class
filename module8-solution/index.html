@@ -8,8 +8,8 @@
   <script src="angular.min.js"></script>
   <script src="app.js"></script>
 </head>
-<body>
-  <div class="container" ng-controller="NarrowItDownController as narrow">
+<body ng-controller="NarrowItDownController as narrow">
+  <div class="container">
     <h1>Narrow Down Your Chinese Menu Choice</h1>
 
     <div class="form-group">
@@ -18,11 +18,8 @@
     <div class="form-group narrow-button">
       <button class="btn btn-primary" ng-click="narrow.getMatchedMenuItems();">Narrow It Down For Me!</button>
     </div>
-
-    <div>
-      <found-items items="narrow.foundItems" on-remove="narrow.remove(index)"></found-items>
-    </div>
   </div>
+  <found-items items="narrow.foundItems" on-remove="narrow.remove(index)"></found-items>
 
 </body>
 
