@@ -27,17 +27,21 @@
         narrow.searchTerm = '';
         narrow.foundItems = null;
 
-        console.log(this.foundItems);
-
         narrow.getMatchedMenuItems = function () {
             var promise = MenuSearchService.getMatchedMenuItems(this.searchTerm);
 
-            promise.then(function (response) {
-                narrow.foundItems = response;
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
+            if (!narrow.searchTerm || narrow.searchTerm.trim() === '') {
+                narrow.foundItems = []; // No items found for empty search term
+            }
+            else {
+                promise
+                    .then(function (response) {
+                        narrow.foundItems = response;
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    })
+            }
         };
 
         narrow.remove = function (index) {
