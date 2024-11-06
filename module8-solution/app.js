@@ -31,7 +31,6 @@
             var promise = MenuSearchService.getMatchedMenuItems(this.searchTerm);
 
             promise.then(function (response) {
-                console.log(response);
                 narrow.foundItems = response;
             })
             .catch(function (error) {
