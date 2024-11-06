@@ -5,5 +5,5 @@
             <button ng-click="onRemove({index: $index});">Don’t want this one!</button>
         </li>
     </ul>
+    <div class="alert alert-warning" ng-if="items.length === 0;">Nothing found!</div>
 </div>
-<div ng-if="items.length === 0;">Nothing found!</div>

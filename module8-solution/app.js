@@ -14,7 +14,7 @@
                 items: '<',
                 onRemove: '&'
             }
-        };
+        }
 
         return ddo;
     }
@@ -31,15 +31,16 @@
             var promise = MenuSearchService.getMatchedMenuItems(this.searchTerm);
 
             promise.then(function (response) {
+                console.log(response);
                 narrow.foundItems = response;
             })
-            .catch(function (error) {
-                console.log(error);
-            })
+                .catch(function (error) {
+                    console.log(error);
+                })
         };
 
         narrow.remove = function (index) {
-            narrow.found.splice(index, 1);
+            narrow.foundItems.splice(index, 1);
         }
     };
 
