@@ -25,6 +25,7 @@
         var narrow = this;
 
         narrow.searchTerm = '';
+        narrow.foundItems = null;
 
         narrow.getMatchedMenuItems = function () {
             var promise = MenuSearchService.getMatchedMenuItems(this.searchTerm);
@@ -54,7 +55,6 @@
             });
 
             return response.then(function (response) {
-                console.log(response.data);
                 var foundItems = [];
 
                 // process result and only keep items that match description
@@ -65,7 +65,6 @@
                     menuItems.forEach(item => {
                         if (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase())) {
                             foundItems.push(item);
-                            console.log(item.short_name);
                         }
                     });
                 }
