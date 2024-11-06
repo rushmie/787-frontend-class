@@ -27,6 +27,8 @@
         narrow.searchTerm = '';
         narrow.foundItems = null;
 
+        console.log(this.foundItems);
+
         narrow.getMatchedMenuItems = function () {
             var promise = MenuSearchService.getMatchedMenuItems(this.searchTerm);
 
