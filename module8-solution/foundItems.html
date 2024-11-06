@@ -1,7 +1,9 @@
-<div>
+<div ng-if="items !== null">
     <ul>
         <li ng-repeat="item in items">
-            <div>{{ item.name }} {{ item.short_name }} {{ item.description }}</div>
+            <div>{{ item.name }}</div>
+            <div>{{ item.short_name }}</div>
+            <div>{{ item.description }}</div>
             <button ng-click="onRemove({index: $index});">Don’t want this one!</button>
         </li>
     </ul>

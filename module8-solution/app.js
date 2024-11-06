@@ -25,7 +25,6 @@
         var narrow = this;
 
         narrow.searchTerm = '';
-        narrow.foundItems = [];
 
         narrow.getMatchedMenuItems = function () {
             var promise = MenuSearchService.getMatchedMenuItems(this.searchTerm);
@@ -34,9 +33,9 @@
                 console.log(response);
                 narrow.foundItems = response;
             })
-                .catch(function (error) {
-                    console.log(error);
-                })
+            .catch(function (error) {
+                console.log(error);
+            })
         };
 
         narrow.remove = function (index) {
@@ -66,6 +65,7 @@
                     menuItems.forEach(item => {
                         if (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase())) {
                             foundItems.push(item);
+                            console.log(item.short_name);
                         }
                     });
                 }
