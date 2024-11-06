@@ -28,13 +28,12 @@
         narrow.foundItems = null;
 
         narrow.getMatchedMenuItems = function () {
-            var promise = MenuSearchService.getMatchedMenuItems(this.searchTerm);
-            console.log(searchTerm);
             if (!narrow.searchTerm || narrow.searchTerm.trim() === '') {
                 console.log("Empty search term!");
                 narrow.foundItems = []; // No items found for empty search term
             }
             else {
+                var promise = MenuSearchService.getMatchedMenuItems(this.searchTerm);
                 promise
                     .then(function (response) {
                         narrow.foundItems = response;
