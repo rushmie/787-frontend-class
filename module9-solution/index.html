@@ -2,15 +2,17 @@
 <html lang="en" ng-app="MenuApp">
 
 <head>
-  <title>Narrow Down Your Menu Choice</title>
+  <title>Welcome to Our Restaurant</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles/bootstrap.min.css">
 </head>
 
-<body ng-controller="">
+<body>
+  <h1>Welcome to Our Restaurant!</h1>
   <div class="container">
     <a ui-sref="categories">Categories</a>
   </div>
+
   <ui-view></ui-view>
 
   <!-- Libraries -->
@@ -21,6 +23,8 @@
   <script src="src/menuapp.module.js"></script>
   <script src="src/data.module.js"></script>
 
+  <script src="src/menudata.service.js"></script>
+
   <!-- Routes -->
   <script src="src/routes.js"></script>
 
@@ -29,8 +33,6 @@
 
   <script src="src/items.component.js"></script>
   <script src="src/items.controller.js"></script>
-
-  <script src="src/menudata.service.js"></script>
 
 </body>
 

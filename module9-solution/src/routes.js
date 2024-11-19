@@ -8,11 +8,11 @@
 
     function RoutesConfig($stateProvider, $urlRouterProvider) {
         //Redirect to home if no other URL matches
-        $urlRouterProvider.otherwise('/home');
+        $urlRouterProvider.otherwise('/');
 
         $stateProvider
             .state('home', {
-                url: '/home',
+                url: '/',
                 templateUrl: 'home.template.html'
             })
             .state('categories', {
