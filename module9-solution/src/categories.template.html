@@ -1,0 +1,10 @@
+<div>
+    <div>Categories</div>
+    <ul>
+        <li ng-repeat="category in categoriesController.categories">
+            <a ui-sref="items({categoryShortName: category.short_name, categoryName:category.name})">
+                {{category.short_name}}
+            </a>
+        </li>
+    </ul>
+</div>
