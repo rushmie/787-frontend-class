@@ -11,7 +11,7 @@
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
-        
+
             .state('home', {
                 url: '/',
                 templateUrl: 'src/home.template.html'
@@ -27,9 +27,14 @@
                 }
             })
             .state('items', {
-                url: '/items',
+                url: '/items/{categoryShortName}',
                 templateUrl: 'src/items.template.html',
                 controller: 'ItemsController as itemsController',
+                resolve: {
+                    items: ['$stateParams', 'MenuDataService', function($stateParams, MenuDataService) {
+                        return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
+                    }]
+                }
             })
     }
 
