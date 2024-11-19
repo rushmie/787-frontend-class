@@ -11,13 +11,14 @@
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
+        
             .state('home', {
                 url: '/',
-                templateUrl: 'home.template.html'
+                templateUrl: 'src/home.template.html'
             })
             .state('categories', {
                 url: '/categories',
-                templateUrl: 'categories.template.html',
+                templateUrl: 'src/categories.template.html',
                 controller: 'CategoriesController as categoriesController',
                 resolve: {
                     categories: ['MenuDataService', function(MenuDataService) {
@@ -27,7 +28,7 @@
             })
             .state('items', {
                 url: '/items',
-                templateUrl: 'items.template.html',
+                templateUrl: 'src/items.template.html',
                 controller: 'ItemsController as itemsController',
             })
     }

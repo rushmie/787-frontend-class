@@ -5,7 +5,7 @@
 
     ItemsController.$inject = ['items'];
 
-    function ItemsController() {
+    function ItemsController(items) {
         var itemsController = this;
 
         itemsController.items = items;
