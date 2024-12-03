@@ -47,15 +47,24 @@ function routeConfig ($stateProvider) {
       controller: 'SignUpController',
       controllerAs: 'signUpCtrl',
       resolve: {
+        getUser: ['UserService', function (UserService) {
+          return UserService.getUser;
+        }],
+        saveUser: ['UserService', function (UserService) {
+          return UserService.saveUser;
+        }]
 
       }
     })
     .state('public.myinfo', {
       url: '/menu',
       templateUrl: 'src/public/my-info/my-info.html',
-      controller: 'UserController',
-      controllerAs: 'userCtrl',
+      controller: 'MyInfoController',
+      controllerAs: 'myInfoCtrl',
       resolve: {
+        user: ['UserService', function (UserService) {
+          return UserService.getUser();
+        }],
       }
     });
 }
