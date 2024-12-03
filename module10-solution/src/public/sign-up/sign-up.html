@@ -1,0 +1,41 @@
+<style>
+    .ng-touched.ng-invalid {
+        border: 2px red solid;
+    }
+
+    .ng-touched.ng-valid {
+        border: 2px green solid;
+    }
+</style>
+<div class="container">
+    <h2>Sign Up</h2>
+    <fieldset>
+        <form name="signUpForm" novalidate>
+            <input type="text" name="FirstName" ng-model="signUpCtrl.firstName" placeholder="First Name" required
+                minlength="2">
+            <span ng-if="signUpForm.firstName.$error.required && signUpForm.firstName.$touched">
+                Must enter a First Name
+            </span>
+            <input type="text" name="LastName" ng-model="signUpCtrl.lastName" placeholder="Last Name" required
+                minlength="2">
+            <span ng-if="signUpForm.lastName.$error.required && signUpForm.lastName.$touched">
+                Must enter a Last Name
+            </span>
+            <input type="email" name="email" ng-model="signUpCtrl.email" placeholder="Email" required>
+            <span ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">
+                Must be a valid email address: handle@domain format
+            </span>
+            <input type="text" name="phone" ng-model="signUpCtrl.phone" placeholder="Phone ###-###-####" required
+                minlength="2"
+                pattern="(\d{3})-(\d{3})-(\d{4})">
+            <span ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">
+                Phone must be in the format ###-###-####
+            </span>
+            <button ng-disabled="signUpForm.$invalid"
+            ng-click="signUpCtrl.signUp()">
+            Sign Up
+            </button>
+        </form>
+    </fieldset>
+
+</div>
