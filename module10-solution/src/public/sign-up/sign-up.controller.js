@@ -10,7 +10,7 @@ function SignUpController(UserService) {
   var signUpCtrl = this;
 
   var user = UserService.getUser();
-  if(user) {
+  if(user != undefined) {
     signUpCtrl.firstName = user.firstName;
     signUpCtrl.lastName = user.lastName;
     signUpCtrl.phone = user.phone;
