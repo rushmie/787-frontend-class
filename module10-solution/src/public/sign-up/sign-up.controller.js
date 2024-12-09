@@ -9,7 +9,7 @@ SignUpController.$inject = ['user', 'setUser'];
 function SignUpController(getUser, setUser) {
   var $ctrl = this;
 
-  var user = user;
+  var user = getUser();
   if(user) {
     $ctrl.firstName = user.firstName;
     $ctrl.lastName = user.lastName;
