@@ -7,29 +7,29 @@ angular.module('public')
 SignUpController.$inject = ['UserService'];
 
 function SignUpController(UserService) {
-  var $ctrl = this;
+  var signUpCtrl = this;
 
   var user = UserService.getUser();
   if(user) {
-    $ctrl.firstName = user.firstName;
-    $ctrl.lastName = user.lastName;
-    $ctrl.phone = user.phone;
-    $ctrl.email = user.firstName;
-    $ctrl.favoriteDish = user.firstName;
+    signUpCtrl.firstName = user.firstName;
+    signUpCtrl.lastName = user.lastName;
+    signUpCtrl.phone = user.phone;
+    signUpCtrl.email = user.email;
+    signUpCtrl.favoriteDish = user.favoriteDish;
 
   }
 
-  $ctrl.signUp = function() {
-    const user = {
-      firstName: $ctrl.firstName, 
-      lastName: $ctrl.lastName, 
-      phone: $ctrl.phone, 
-      email: $ctrl.email,
-      favoriteDish: $ctrl.favoriteDish
+  signUpCtrl.signUp = function() {
+    var user = {
+      firstName: signUpCtrl.firstName, 
+      lastName: signUpCtrl.lastName, 
+      phone: signUpCtrl.phone, 
+      email: signUpCtrl.email,
+      favoriteDish: signUpCtrl.favoriteDish
     };
 
     UserService.setUser(user);
-    $ctrl.infoSaved = true;
+    signUpCtrl.infoSaved = true;
     
   }
 }

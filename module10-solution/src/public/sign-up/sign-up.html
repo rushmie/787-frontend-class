@@ -1,38 +1,46 @@
+<style>
+    input.ng-invalid.ng-touched {
+        color: red;
+    }
+    input.ng-valid.ng-touched {
+        color: green;
+    }
+</style>
 <div>
     <h2>Sign Up</h2>
     <fieldset>
-        <form name="signUpForm" novalidate>
+        <form name="signUpCtrl.signUpForm" novalidate>
             <div>
                 <input type="text" name="firstName" ng-model="signUpCtrl.firstName" placeholder="First Name" required>
-                <span ng-if="signUpForm.firstName.$error.required && signUpForm.firstName.$touched">
+                <span ng-if="signUpCtrl.signUpForm.firstName.$error.required && signUpCtrl.signUpForm.firstName.$touched">
                     Must enter a First Name.
                 </span>
             </div>
             <div>
                 <input type="text" name="lastName" ng-model="signUpCtrl.lastName" placeholder="Last Name" required>
-                <span ng-if="signUpForm.lastName.$error.required && signUpForm.lastName.$touched">
+                <span ng-if="signUpCtrl.signUpForm.lastName.$error.required && signUpCtrl.signUpForm.lastName.$touched">
                     Must enter a Last Name.
                 </span>
             </div>
             <div>
                 <input type="email" name="email" ng-model="signUpCtrl.email" placeholder="Email" required>
-                <span ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">
+                <span ng-if="signUpCtrl.signUpForm.email.$invalid && signUpCtrl.signUpForm.email.$touched">
                     Must be a valid email address: handle@domain format.
                 </span>
             </div>
             <div>
                 <input type="text" name="phone" ng-model="signUpCtrl.phone" placeholder="Phone ###-###-####" required
                     pattern="(\d{3})-(\d{3})-(\d{4})">
-                <span ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">
+                <span ng-if="signUpCtrl.signUpForm.phone.$invalid && signUpCtrl.signUpForm.phone.$touched">
                     Phone must be in the format ###-###-####.
                 </span>
             </div>
             <div>
                 <input type="text" name="favoriteDish" ng-model="signUpCtrl.favoriteDish" required>
-                <span ng-if="signUpForm.favoriteDish.$invalid && signUpForm.favoriteDish.$touched">
+                <span ng-if="signUpCtrl.signUpForm.favoriteDish.$invalid && signUpCtrl.signUpForm.favoriteDish.$touched">
                 </span>
             </div>
-            <button ng-disabled="signUpForm.$invalid" ng-click="signUpCtrl.signUp()">
+            <button ng-disabled="signUpCtrl.signUpForm.$invalid" ng-click="signUpCtrl.signUp()">
                 Sign Up
             </button>
         </form>
