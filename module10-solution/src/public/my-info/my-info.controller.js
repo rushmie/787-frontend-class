@@ -9,7 +9,7 @@ MyInfoController.$inject = ['UserService'];
 function MyInfoController(UserService) {
   var $ctrl = this;
 
-  $ctrl.user = Userservice.getUser();
+  $ctrl.user = UserService.getUser();
 }
 
 })();
