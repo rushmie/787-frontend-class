@@ -6,7 +6,7 @@ angular.module('public')
 
 SignUpController.$inject = ['getUser', 'saveUser'];
 
-function SignUpController(getUser, saveUser) {
+function SignUpController(getUser, setUser) {
   var $ctrl = this;
 
   var user = getUser();
@@ -28,7 +28,7 @@ function SignUpController(getUser, saveUser) {
       favoriteDish: $ctrl.favoriteDish
     };
 
-    saveUser(user);
+    setUser(user);
     $ctrl.infoSaved = true;
     
   }

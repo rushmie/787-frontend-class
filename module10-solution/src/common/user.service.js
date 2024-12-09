@@ -4,7 +4,6 @@
     angular.module('common')
     .service('UserService', UserService);
     
-    UserService.$inject = [];
     function UserService() {
       var service = this;
     
@@ -19,4 +18,4 @@
     
     }
     
-    })();
+  })();

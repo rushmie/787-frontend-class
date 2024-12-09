@@ -50,8 +50,8 @@ function routeConfig ($stateProvider) {
         getUser: ['UserService', function (UserService) {
           return UserService.getUser;
         }],
-        saveUser: ['UserService', function (UserService) {
-          return UserService.saveUser;
+        setUser: ['UserService', function (UserService) {
+          return UserService.setUser;
         }]
       }
     })
