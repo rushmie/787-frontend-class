@@ -4,7 +4,7 @@
 angular.module('public')
 .controller('SignUpController', SignUpController);
 
-SignUpController.$inject = ['getUser', 'saveUser'];
+SignUpController.$inject = ['getUser', 'setUser'];
 
 function SignUpController(getUser, setUser) {
   var $ctrl = this;
