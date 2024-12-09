@@ -4,12 +4,12 @@
 angular.module('public')
 .controller('SignUpController', SignUpController);
 
-SignUpController.$inject = ['user', 'setUser'];
+SignUpController.$inject = ['UserService'];
 
-function SignUpController(getUser, setUser) {
+function SignUpController(UserService) {
   var $ctrl = this;
 
-  var user = getUser();
+  var user = UserService.getUser();
   if(user) {
     $ctrl.firstName = user.firstName;
     $ctrl.lastName = user.lastName;
@@ -28,7 +28,7 @@ function SignUpController(getUser, setUser) {
       favoriteDish: $ctrl.favoriteDish
     };
 
-    setUser(user);
+    UserService.setUser(user);
     $ctrl.infoSaved = true;
     
   }

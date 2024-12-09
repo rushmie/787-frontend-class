@@ -46,14 +46,6 @@ function routeConfig ($stateProvider) {
       templateUrl: 'src/public/sign-up/sign-up.html',
       controller: 'SignUpController',
       controllerAs: 'signUpCtrl',
-      resolve: {
-        getUser: ['UserService', function (UserService) {
-          return UserService.getUser;
-        }],
-        setUser: ['UserService', function (UserService) {
-          return UserService.setUser;
-        }]
-      }
     })
     .state('public.myinfo', {
       url: '/myinfo',
