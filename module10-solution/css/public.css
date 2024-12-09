@@ -113,14 +113,14 @@ h3.menu-item-title {
 }
 /* END SINGLE CATEGORY PAGE */
 
+input {
+  color: black;
+}
 input.ng-invalid.ng-touched {
   color: red;
 }
 input.ng-valid.ng-touched {
   color: green;
-}
-input {
-  color: black;
 }
 
 
