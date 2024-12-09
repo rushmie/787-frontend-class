@@ -113,6 +113,16 @@ h3.menu-item-title {
 }
 /* END SINGLE CATEGORY PAGE */
 
+input.ng-invalid.ng-touched {
+  color: red;
+}
+input.ng-valid.ng-touched {
+  color: green;
+}
+input {
+  color: black;
+}
+
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {
