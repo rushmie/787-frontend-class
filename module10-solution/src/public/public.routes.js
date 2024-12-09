@@ -47,8 +47,8 @@ function routeConfig ($stateProvider) {
       controller: 'SignUpController',
       controllerAs: 'signUpCtrl',
       resolve: {
-        getUser: ['UserService', function (UserService) {
-          return UserService.getUser;
+        user: ['UserService', function (UserService) {
+          return UserService.getUser();
         }],
         setUser: ['UserService', function (UserService) {
           return UserService.setUser;

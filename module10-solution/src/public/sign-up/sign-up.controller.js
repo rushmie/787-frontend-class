@@ -4,12 +4,12 @@
 angular.module('public')
 .controller('SignUpController', SignUpController);
 
-SignUpController.$inject = ['getUser', 'setUser'];
+SignUpController.$inject = ['user', 'setUser'];
 
 function SignUpController(getUser, setUser) {
   var $ctrl = this;
 
-  var user = getUser();
+  var user = user;
   if(user) {
     $ctrl.firstName = user.firstName;
     $ctrl.lastName = user.lastName;
