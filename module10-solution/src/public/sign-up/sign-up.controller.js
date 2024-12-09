@@ -10,13 +10,15 @@ function SignUpController(UserService) {
   var signUpCtrl = this;
 
   var user = UserService.getUser();
+
+  signUpCtrl.user = user;
+
   if(user != undefined) {
     signUpCtrl.firstName = user.firstName;
     signUpCtrl.lastName = user.lastName;
     signUpCtrl.phone = user.phone;
     signUpCtrl.email = user.email;
     signUpCtrl.favoriteDish = user.favoriteDish;
-
   }
 
   signUpCtrl.signUp = function() {
