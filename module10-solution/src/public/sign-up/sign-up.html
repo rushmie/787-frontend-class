@@ -1,8 +1,5 @@
 <div class="container">
     <h2>Sign Up</h2>
-    <div ng-if="signUpCtrl.user">
-        Already Signed Up! See registered info here: <a ui-sref="public.myinfo">My Info</a>
-    </div>
     <fieldset>
         <form name="signUpCtrl.signUpForm" novalidate>
             <div>
@@ -41,7 +38,8 @@
         </form>
     </fieldset>
     <div ng-if="signUpCtrl.infoSaved">
-        Your information has been saved.
+        Your information has been saved. See you info here:
+        <a ui-sref="public.myinfo">My Info</a>
     </div>
 
 </div>
