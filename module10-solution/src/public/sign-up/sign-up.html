@@ -11,12 +11,12 @@
     <h2>Sign Up</h2>
     <fieldset>
         <form name="signUpForm" novalidate>
-            <input type="text" name="firstName" ng-model="signUpCtrl.firstName" placeholder="First Name" required
+            <input type="text" name="FirstName" ng-model="signUpCtrl.firstName" placeholder="First Name" required
                 minlength="2">
             <span ng-if="signUpForm.firstName.$error.required && signUpForm.firstName.$touched">
                 Must enter a First Name
             </span>
-            <input type="text" name="lastName" ng-model="signUpCtrl.lastName" placeholder="Last Name" required
+            <input type="text" name="LastName" ng-model="signUpCtrl.lastName" placeholder="Last Name" required
                 minlength="2">
             <span ng-if="signUpForm.lastName.$error.required && signUpForm.lastName.$touched">
                 Must enter a Last Name

@@ -53,7 +53,6 @@ function routeConfig ($stateProvider) {
         saveUser: ['UserService', function (UserService) {
           return UserService.saveUser;
         }]
-
       }
     })
     .state('public.myinfo', {
