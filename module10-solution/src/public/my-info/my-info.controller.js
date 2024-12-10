@@ -6,7 +6,7 @@ angular.module('public')
 
 MyInfoController.$inject = ['UserService', 'MenuService'];
 
-function MyInfoController(UserService) {
+function MyInfoController(UserService, MenuService) {
   var myInfoCtrl = this;
 
   myInfoCtrl.user = UserService.getUser();
