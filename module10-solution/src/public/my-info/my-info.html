@@ -9,7 +9,7 @@
             <div>Favorite Dish: {{myInfoCtrl.user.favoriteDish}}</div>
             <p>{{myinfoCtrl.menuItem.name}}</p>
             <p>{{myinfoCtrl.menuItem.description}}</p>
-            <img ng-src="{{myInfoCtrl.apiPath}}/images/{{myInfoCtrl.menuItem.short_name}}.jpg">
+            <img ng-src="{{myInfoCtrl.imagePath}}">
         </div>
     </div>
     <div ng-if="!myInfoCtrl.user">

@@ -40,6 +40,17 @@
         });
     };
 
+    service.getMenuItemImagePath = function (menuNumber) {
+      const parse = menuNumber.match(/^([A-Za-z]+)(\d+)$/);
+      if (parse) {
+        const category = parse[1];
+        const dishNumber = parseInt(parse[2]) - 1; // Convert to zero-based index
+        return 'images/menu/' + category + '/' + category + dishNumber + '.jpg';
+      }
+      else {
+        return null;
+      }
+    }
   }
 
 
