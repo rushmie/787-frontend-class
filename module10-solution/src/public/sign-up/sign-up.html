@@ -28,7 +28,8 @@
                 </span>
             </div>
             <div>
-                <input type="text" name="favoriteDish" ng-model="signUpCtrl.favoriteDish" placeholder="Favorite Dish (e.g., A1)">
+                <input type="text" name="favoriteDish" ng-model="signUpCtrl.favoriteDish" placeholder="Favorite Dish (e.g., A1)" required
+                    ng-blur="signUpCtrl.validateFavoriteDish()">
                 <span ng-if="signUpCtrl.signUpForm.favoriteDishError">
                     {{ signUpCtrl.favoriteDishError }}
                 </span>

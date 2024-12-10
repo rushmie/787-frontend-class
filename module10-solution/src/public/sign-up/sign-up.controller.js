@@ -51,6 +51,20 @@
       signUpCtrl.infoSaved = true;
 
     }
-  }
 
+    signUpCtrl.validateFavoriteDish = function () {
+      if (!signUpCtrl.favoriteDish) {
+        signUpCtrl.favoriteDishError = "Favorite dish is required.";
+        return;
+      }
+
+      var fav = MenuService.getMenuItem(signUpCtrl.favoriteDish);
+      if (!fav) {
+        signUpCtrl.favoriteDishError = "No such menu number exists.";
+      } 
+      else {
+        signUpCtrl.favoriteDishError = ""; // Clear error if valid
+      }
+    }
+  };
 })();
