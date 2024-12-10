@@ -27,8 +27,8 @@
         return null;
       }
       const parse = menuNumber.match(/^([A-Za-z]+)(\d+)$/);
-      const category = null;
-      const dishNumber = null;
+      var category = null;
+      var dishNumber = null;
       if (parse) {
         category = parse[1];
         dishNumber = parseInt(parse[2]) - 1; // Convert to zero-based index
