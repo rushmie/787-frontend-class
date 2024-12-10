@@ -4,7 +4,7 @@
 angular.module('public')
 .controller('MyInfoController', MyInfoController);
 
-MyInfoController.$inject = ['UserService', 'MenuService', 'ApiPath'];
+MyInfoController.$inject = ['UserService', 'MenuService'];
 
 function MyInfoController(UserService) {
   var myInfoCtrl = this;
