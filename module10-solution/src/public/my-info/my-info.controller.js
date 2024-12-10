@@ -15,8 +15,6 @@ function MyInfoController(UserService) {
     myInfoCtrl.menuItem = MenuService.getMenuItem(user.favoriteDish);
     myInfoCtrl.imagePath = MenuService.getMenuItemImagePath(user.favoriteDish);
   }
-
-  myInfoCtrl.apiPath = ApiPath;
 }
 
 })();
