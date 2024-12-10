@@ -53,7 +53,7 @@
     }
 
     signUpCtrl.validateFavoriteDish = function () {
-      if (!signUpCtrl.favoriteDish) {
+      if (!signUpCtrl.favoriteDish || signUpCtrl.favoriteDish === "") {
         signUpCtrl.favoriteDishError = "Favorite dish is required.";
         return;
       }
