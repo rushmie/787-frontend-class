@@ -5,7 +5,12 @@
         <div>Last Name: {{myInfoCtrl.user.lastName}}</div>
         <div>Email: {{myInfoCtrl.user.email}}</div>
         <div>Phone Number: {{myInfoCtrl.user.phone}}</div>
-        <div>Favorite Dish: {{myInfoCtrl.user.favoriteDish}}</div>
+        <div>
+            <div>Favorite Dish: {{myInfoCtrl.user.favoriteDish}}</div>
+            <p>{{myinfoCtrl.menuItem.name}}</p>
+            <p>{{myinfoCtrl.menuItem.description}}</p>
+            <img ng-src="{{myInfoCtrl.apiPath}}/images/{{myInfoCtrl.menuItem.short_name}}.jpg">
+        </div>
     </div>
     <div ng-if="!myInfoCtrl.user">
         Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>

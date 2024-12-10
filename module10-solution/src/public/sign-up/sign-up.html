@@ -28,8 +28,9 @@
                 </span>
             </div>
             <div>
-                <input type="text" name="favoriteDish" ng-model="signUpCtrl.favoriteDish" required>
-                <span ng-if="signUpCtrl.signUpForm.favoriteDish.$invalid && signUpCtrl.signUpForm.favoriteDish.$touched">
+                <input type="text" name="favoriteDish" ng-model="signUpCtrl.favoriteDish" placeholder="Favorite Dish (e.g., A1)">
+                <span ng-if="signUpCtrl.signUpForm.favoriteDishError">
+                    {{ signUpCtrl.favoriteDishError }}
                 </span>
             </div>
             <button ng-disabled="signUpCtrl.signUpForm.$invalid" ng-click="signUpCtrl.signUp()">
@@ -38,7 +39,7 @@
         </form>
     </fieldset>
     <div ng-if="signUpCtrl.infoSaved">
-        Your information has been saved. See you info here:
+        Your information has been saved. See your info here:
         <a ui-sref="public.myinfo">My Info</a>
     </div>
 

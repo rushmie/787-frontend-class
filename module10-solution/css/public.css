@@ -123,6 +123,10 @@ input.ng-valid.ng-touched {
   color: green;
 }
 
+button {
+  color: blue;
+}
+
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {
