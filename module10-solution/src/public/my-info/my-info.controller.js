@@ -12,7 +12,7 @@ function MyInfoController(UserService, MenuService) {
   myInfoCtrl.user = UserService.getUser();
 
   if(myInfoCtrl.user && myInfoCtrl.user.favoriteDish) {
-    myInfoCtrl.menuItem = MenuService.getMenuItem(myInfoCtrl.user.favoriteDish);
+    myInfoCtrl.menuItem = MenuService.getMenuItem(myInfoCtrl.user.favoriteDish).$$state.value;
     console.log(myInfoCtrl.menuItem);
     myInfoCtrl.imagePath = MenuService.getMenuItemImagePath(myInfoCtrl.user.favoriteDish);
   }
