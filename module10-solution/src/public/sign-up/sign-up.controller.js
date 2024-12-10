@@ -59,7 +59,7 @@
       }
 
       var fav = MenuService.getMenuItem(signUpCtrl.favoriteDish);
-      if (!fav) {
+      if (fav == null) {
         signUpCtrl.favoriteDishError = "No such menu number exists.";
       } 
       else {
