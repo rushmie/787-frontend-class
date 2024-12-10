@@ -13,9 +13,11 @@ function MyInfoController(UserService, MenuService) {
 
   if(myInfoCtrl.user && myInfoCtrl.user.favoriteDish) {
     MenuService.getMenuItem(myInfoCtrl.user.favoriteDish).then(function (response) {
+      console.log(response);
       myInfoCtrl.menuItem = response;
+      console.log(myInfoCtrl.menuItem);
     });
-    console.log(myInfoCtrl.menuItem);
+
     myInfoCtrl.imagePath = MenuService.getMenuItemImagePath(myInfoCtrl.user.favoriteDish);
   }
 }
