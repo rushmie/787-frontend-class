@@ -27,9 +27,11 @@
         return null;
       }
       const parse = menuNumber.match(/^([A-Za-z]+)(\d+)$/);
+      const category = null;
+      const dishNumber = null;
       if (parse) {
-        const category = parse[1];
-        const dishNumber = parseInt(parse[2]) - 1; // Convert to zero-based index
+        category = parse[1];
+        dishNumber = parseInt(parse[2]) - 1; // Convert to zero-based index
       }
       else {
         return null;
