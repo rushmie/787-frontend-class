@@ -58,13 +58,15 @@
         return;
       }
 
-      var fav = MenuService.getMenuItem(signUpCtrl.favoriteDish);
-      if (fav == null) {
-        signUpCtrl.favoriteDishError = "No such menu number exists.";
-      } 
-      else {
-        signUpCtrl.favoriteDishError = ""; // Clear error if valid
-      }
+      MenuService.getMenuItem(signUpCtrl.favoriteDish).then(function (response) {
+        console.log(response);
+        if (response == null) {
+          signUpCtrl.favoriteDishError = "No such menu number exists.";
+        } 
+        else {
+          signUpCtrl.favoriteDishError = ""; // Clear error if valid
+        }
+      });
     }
   };
 })();
