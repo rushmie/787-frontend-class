@@ -35,7 +35,9 @@
       }
 
       // If favoriteDish is valid, clear the error message
-      signUpCtrl.favoriteDishError = "";
+      if (signUpCtrl.favoriteDishError != ""){
+        return;
+      }
 
       UserService.setUser(user);
       signUpCtrl.infoSaved = true;
