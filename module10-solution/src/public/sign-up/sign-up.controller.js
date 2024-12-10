@@ -31,11 +31,11 @@
       };
 
       if (signUpCtrl.favoriteDish) {
-        var result = this.validateFavoriteDish();
-        if (result == null) {
-          return;
-        }
+        this.validateFavoriteDish();
       }
+
+      // If favoriteDish is valid, clear the error message
+      signUpCtrl.favoriteDishError = "";
 
       UserService.setUser(user);
       signUpCtrl.infoSaved = true;
@@ -45,14 +45,12 @@
     signUpCtrl.validateFavoriteDish = function () {
       if (!signUpCtrl.favoriteDish || signUpCtrl.favoriteDish === "") {
         signUpCtrl.favoriteDishError = "Favorite dish is required.";
-        return null;
+        return;
       }
 
       MenuService.getMenuItem(signUpCtrl.favoriteDish).then(function (response) {
-        console.log(response);
         if (response == null) {
           signUpCtrl.favoriteDishError = "No such menu number exists.";
-          return null;
         } 
         else {
           signUpCtrl.favoriteDishError = ""; // Clear error if valid
